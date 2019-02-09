@@ -69,7 +69,7 @@ public class RandomTestingABBS {
         //首先测试揭示第一个故障需要的测试用例个数重复20次
         List<Double> alltimeforonefault = new ArrayList<>();
         List<Integer> allcounterforonefault = new ArrayList<>() ;
-        for (int j = 0; j < 20; j++) {
+        for (int j = 0; j < 30; j++) {
             double starttime = System.currentTimeMillis();
             Random r = new Random(j);
             //记录测试的总个数
@@ -103,8 +103,8 @@ public class RandomTestingABBS {
             sum += allcounterforonefault.get(i);
             sumtime += alltimeforonefault.get(i);
         }
-        meanforonefault = sum / 20 ;
-        meantime = sumtime /20;
+        meanforonefault = sum / 30 ;
+        meantime = sumtime / 30;
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < allcounterforonefault.size(); i++) {
             sb.append(String.valueOf(allcounterforonefault.get(i)) + "\n");
@@ -264,16 +264,17 @@ public class RandomTestingABBS {
         List<Double> list = new ArrayList<>();
         double sum = 0.0;
         double sumtime = 0.0;
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 30; i++) {
             double[] re = new double[2];
             re = rt.testPBCHalfTestCases(i);
+//            re = rt.testPBConefaults();
             sum += re[0];
             sumtime += re[1];
             list.add(re[0]);
             timelist.add(re[1]);
         }
-        double mean = sum / 20;
-        double meantime = sumtime /20;
+        double mean = sum / 30;
+        double meantime = sumtime / 30;
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < list.size(); i++) {
             sb.append(String.valueOf(list.get(i)) + "\n");

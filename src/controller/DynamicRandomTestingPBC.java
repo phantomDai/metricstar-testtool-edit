@@ -187,7 +187,7 @@ public class DynamicRandomTestingPBC implements Strategy {
 		//重复执行20次
 		List<Double> alltimeforonefault = new ArrayList<>();
 		List<Integer> allcoubterforonefault = new ArrayList<>();
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 30; i++) {
 			double starttime = System.currentTimeMillis();
 			int counter = 0;//记录杀死一个故障需要的测试用例数目
 			//创建新的random
@@ -245,8 +245,8 @@ public class DynamicRandomTestingPBC implements Strategy {
 			sum += allcoubterforonefault.get(i);
 			sumtime += alltimeforonefault.get(i);
 		}
-		meanforonefault = sum / 20 ;
-		meantime = sumtime /20;
+		meanforonefault = sum / 30 ;
+		meantime = sumtime /30;
 		StringBuffer sb = new StringBuffer();
 		for (int i = 0; i < allcoubterforonefault.size(); i++) {
 			sb.append(String.valueOf(allcoubterforonefault.get(i)) + "\n");
@@ -342,7 +342,7 @@ public class DynamicRandomTestingPBC implements Strategy {
 		//重复执行20次
 		List<Double> alltimeforhaltcase = new ArrayList<>();
 		List<Integer> allcoubterforhaftcase = new ArrayList<>();
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 30; i++) {
 			double starttime = System.currentTimeMillis();
 			int counter = 0;//记录杀死一个故障需要的测试用例数目
 
@@ -418,8 +418,8 @@ public class DynamicRandomTestingPBC implements Strategy {
 			sum += allcoubterforhaftcase.get(i);
 			sumtime += alltimeforhaltcase.get(i);
 		}
-		meanforonefault = sum / 20 ;
-		meantime = sumtime / 20;
+		meanforonefault = sum / 30 ;
+		meantime = sumtime / 30;
 		StringBuffer sb = new StringBuffer();
 		for (int i = 0; i < allcoubterforhaftcase.size(); i++) {
 			sb.append(String.valueOf(allcoubterforhaftcase.get(i)) + "\n");
@@ -514,7 +514,7 @@ public class DynamicRandomTestingPBC implements Strategy {
 		//重复执行20次
 		List<Integer> allcoubterforonefault = new ArrayList<>();
 		List<Double> alltimeforonefault = new ArrayList<>();
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 30; i++) {
 			double starttiem = System.currentTimeMillis();//开始测试的时间
 			int counter = 0;//记录杀死一个故障需要的测试用例数目
 			//创建新的random
@@ -604,8 +604,8 @@ public class DynamicRandomTestingPBC implements Strategy {
 			sum += allcoubterforonefault.get(i);
 			sumtime += alltimeforonefault.get(i);
 		}
-		meanforonefault = sum / 20 ;
-		meantime = sumtime / 20;
+		meanforonefault = sum / 30 ;
+		meantime = sumtime / 30;
 		StringBuffer sb = new StringBuffer();
 		for (int i = 0; i < allcoubterforonefault.size(); i++) {
 			sb.append(String.valueOf(allcoubterforonefault.get(i)) + "\n");
@@ -701,7 +701,7 @@ public class DynamicRandomTestingPBC implements Strategy {
 		//重复执行20次
 		List<Integer> allcountforhalftestcase = new ArrayList<>();
 		List<Double> alltimeforonefault = new ArrayList<>();
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 30; i++) {
 			double starttiem = System.currentTimeMillis();//开始测试的时间
 			int counter = 0;//记录杀死一个故障需要的测试用例数目
 			int killedmutants = 0;
@@ -815,8 +815,8 @@ public class DynamicRandomTestingPBC implements Strategy {
 			sum += allcountforhalftestcase.get(i);
 			sumtime += alltimeforonefault.get(i);
 		}
-		meanforonefault = sum / 20 ;
-		meantime = sumtime / 20;
+		meanforonefault = sum / 30 ;
+		meantime = sumtime / 30;
 		StringBuffer sb = new StringBuffer();
 		for (int i = 0; i < allcountforhalftestcase.size(); i++) {
 			sb.append(String.valueOf(allcountforhalftestcase.get(i)) + "\n");
@@ -1050,9 +1050,9 @@ public class DynamicRandomTestingPBC implements Strategy {
 	public static void main(String[] args) {
 		DynamicRandomTestingPBC drt = new DynamicRandomTestingPBC();
 		drt.testonefaultsforP();
-//		drt.testhalftestcasesforP();
-//		drt.testOneFaultsforM();
-//		drt.testhalftestcasesforM();
+		drt.testhalftestcasesforP();
+		drt.testOneFaultsforM();
+		drt.testhalftestcasesforM();
 	}
 
 
